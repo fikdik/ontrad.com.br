@@ -1,0 +1,30 @@
+source: "./src"
+
+destination: "./public"
+
+timezone: "America/Sao_Paulo"
+
+future: true
+
+url: https://ontrad.com.br
+
+collections:
+  authors:
+    output: true
+
+defaults:
+  - scope:
+      path: ""
+      type: "authors"
+    values:
+      layout: "author"
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+  - scope:
+      path: ""
+    values:
+      layout: "default"
+

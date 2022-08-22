@@ -1,0 +1,48 @@
+backend:
+  name: github
+  repo: fikdik/ontrad.com.br
+  branch: main # Branch to update (optional; defaults to master)
+local_backend: true
+media_folder: 'src/static/img'
+collections:
+  - name: 'pages'
+    label: 'Pages'
+    extension: "md"
+    format: "frontmatter"
+    files:
+      - file: "src/index.md"
+        label: "Home"
+        name: "home"
+        fields:
+          - label: "Layout"
+            name: "layout"
+            widget: "select"
+            options:
+              - { label: "Home", value: "home"}
+            default: "home"
+          - { label: "Title", name: "title"}
+          - { label: "Primary Color", name: "primaryColor"}
+          - { label: "primaryBoldColor", name: "primaryBoldColor"}
+          - { label: "primaryBlackColor", name: "primaryBlackColor"}
+          - { label: "secondaryColor", name: "secondaryColor"}
+          - { label: "opaqueBackground", name: "opaqueBackground"}
+          - { label: "mainCanvasBackground", name: "mainCanvasBackground"}
+          - label: "Hero"
+            name: "hero"
+            widget: "object"
+            fields:
+              - { label: "SiteNameSize", name: "SiteNameSize" }
+              - { label: "NumberOfVerticalLines", name: "NumberOfVerticalLines" }
+              - { label: "NumberOfDots", name: "NumberOfDots" }
+              - { label: "CanvasBackgroundColor", name: "CanvasBackgroundColor" }
+              - { label: "LettersColor", name: "LettersColor" }
+              - { label: "LinesColors", name: "LinesColors", widget: "list" }
+              - { label: "LowerLinesColors", name: "LowerLinesColors", widget: "list" }
+              - { label: "DotsColor", name: "DotsColor" }
+          - label: "Sobre"
+            name: "aboutUs"
+            widget: "object"
+            fields:
+              - { label: "Title", name: "title" }
+              - { label: "Text", name: "text", widget: "markdown" }
+              - { label: "Video", name: "video", required: false}
